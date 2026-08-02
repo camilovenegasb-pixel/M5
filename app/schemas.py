@@ -1,14 +1,14 @@
 from pydantic import BaseModel, Field
 
-# Esquema de datos de entrada que la API esperará recibir
 class CreditRequest(BaseModel):
-    ingresos_mensuales: float = Field(..., gt=0, example=3500.0)
-    monto_solicitado: float = Field(..., gt=0, example=10000.0)
-    edad: int = Field(..., ge=18, le=100, example=32)
-    estado_civil: str = Field(..., example="Soltero")
-    historial_crediticio: str = Field(..., example="Bueno")
+    monthly_income: float = Field(..., gt=0, example=3500.0)
+    loan_amount: float = Field(..., gt=0, example=10000.0)
+    age: int = Field(..., ge=18, le=100, example=32)
+    employment_status: str = Field(..., example="Employed")
+    education_level: str = Field(..., example="Bachelor")
+    loan_purpose: str = Field(..., example="Personal")
+    region: str = Field(..., example="Urban")
 
-# Esquema de la respuesta que devolverá la API
 class CreditResponse(BaseModel):
     prediccion: int
     probabilidad_default: float
