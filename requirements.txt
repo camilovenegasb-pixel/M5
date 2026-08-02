@@ -13,3 +13,8 @@ xgboost
 pydantic
 fastapi
 uvicorn[standard]
+fastapi
+uvicorn
+pydantic
+streamlit
+requests
